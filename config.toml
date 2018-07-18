@@ -1,4 +1,177 @@
-baseURL = "http://gencloth.com"
-languageCode = "en-us"
+baseurl = "https://example.org"
 title = "GenCloth"
-theme = "ananke"
+theme = "hugo-universal-theme"
+
+languageCode = "en-us"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "en"
+# Enable comments by entering your Disqus shortname
+disqusShortname = ""
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+
+# Define the number of posts per page
+paginate = 10
+
+[menu]
+
+# Main menu
+
+[[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Log"
+    url  = "/log/"
+    weight = 3
+
+[[menu.main]]
+    name = "About"
+    identifier = "About"
+    url  = "/About/"
+    weight = 2
+
+[[menu.main]]
+    name = "Resources"
+    url  = "/Resources/"
+    weight = 4
+
+# Top bar social links menu
+
+[[menu.topbar]]
+    weight = 1
+    name = "GitHub"
+    url = "https://github.com/generativecloth"
+    pre = "<i class='fa fa-lg fa-github'></i>"
+
+[[menu.topbar]]
+    weight = 2
+    name = "Slack"
+    url = "http://Slack.com/generativecloth"
+    pre = "<i class='fa fa-lg fa-slack'></i>"
+
+[[menu.topbar]]
+    weight = 4
+    name = "Twitter"
+    url = "http://twitter.com/generativecloth"
+    pre = "<i class='fa fa-lg fa-twitter'></i>"
+
+[[menu.topbar]]
+    weight = 3
+    name = "Instagram"
+    url = "http://Instagram/generativecloth"
+    pre = "<i class='fa fa-lg fa-instagram'></i>"
+
+[[menu.topbar]]
+    weight = 5
+    name = "Facebook"
+    url = "http://facebook.com/generativecloth"
+    pre = "<i class='fa fa-lg fa-facebook'></i>"
+
+[[menu.topbar]]
+    weight = 6
+    name = "Email"
+    url = "mailto:generativecloth@gmail.com"
+    pre = "<i class='fa fa-lg fa-envelope-o'></i>"
+
+[params]
+    viewMorePostLink = "/log/"
+    author = "GenCloth"
+    defaultKeywords = [""]
+    defaultDescription = "3D toolkits for designers."
+
+    # Google Maps API key (if not set will default to not passing a key.)
+    googleMapsApiKey = ""
+
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "oatmeal"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'email' below
+    # - upload the generated site to your server
+    # - send a dummy email yourself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+    #
+    # Enable the contact form by entering your Formspree.io email
+    email = "your@email.com"
+
+    about_us = "<p>Stuff & Things</p>"
+    copyright = "Copyright (c) 2007-2018 Data_able Studio, S.L."
+
+    # Format dates with Go's time formatting
+    date_format = "2 January 2006"
+
+    logo = "img/logo.png"
+    address = """<p><strong></strong>
+        <br>
+      </p>
+      """
+    latitude = ""
+    longitude = ""
+
+[Permalinks]
+    blog = "/blog/:year/:month/:day/:filename/"
+
+# Enable or disable top bar with social icons
+[params.topbar]
+    enable = true
+    text = """<p class="hidden-sm hidden-xs">generativecloth@gmail.com.</p>
+      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
+      <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+      </p>
+      """
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    categories = false
+    tags = false
+    search = false
+
+[params.carousel]
+    enable = true
+    # All carousel items are defined in their own files. You can find example items
+    # at 'exampleSite/data/carousel'.
+    # For more informtion take a look at the README.
+
+[params.features]
+    enable = true
+    # All features are defined in their own files. You can find example items
+    # at 'exampleSite/data/features'.
+    # For more informtion take a look at the README.
+
+[params.testimonials]
+    enable = false
+    # All testimonials are defined in their own files. You can find example items
+    # at 'exampleSite/data/testimonials'.
+    # For more informtion take a look at the README.
+    title = "Testimonials"
+    subtitle = ""
+
+[params.see_more]
+    enable = true
+    icon = "fa fa-cogs"
+    title = "Come make clothes with us."
+    subtitle = "                      "
+    link_url = "                      "
+    link_text = ""
+
+[params.clients]
+    enable = true
+    # All clients are defined in their own files. You can find example items
+    # at 'exampleSite/data/clients'.
+    # For more informtion take a look at the README.
+    title = "Sustainable Development Goals"
+    subtitle = ""
+
+[params.recent_posts]
+    enable = true
+    title = "From the Log"
+    subtitle = ""
