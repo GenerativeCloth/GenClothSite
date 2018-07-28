@@ -81,7 +81,7 @@ paginate = 10
     author = "GenCloth"
     defaultKeywords = [""]
     defaultDescription = "3D toolkits for designers."
-    
+
     googlefonts = "https://fonts.google.com/specimen/Playfair+Display"
 
     # Google Maps API key (if not set will default to not passing a key.)
@@ -120,7 +120,7 @@ paginate = 10
     longitude = ""
 
 [Permalinks]
-    blog = "/blog/:year/:month/:day/:filename/"
+    log = "/log/:year/:month/:day/:filename/"
 
 # Enable or disable top bar with social icons
 [params.topbar]
@@ -172,8 +172,10 @@ paginate = 10
     # For more informtion take a look at the README.
     title = "Sustainable Development Goals"
     subtitle = ""
+    link_url = "/sdgs/"
 
 [params.recent_posts]
     enable = true
     title = "From the Log"
     subtitle = ""
+    link_url = "/log/"
