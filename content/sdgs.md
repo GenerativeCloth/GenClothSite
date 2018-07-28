@@ -12,8 +12,9 @@ layout = "single"
 <h2</b>GenCloth focuses on contributing to the achievement of six of the [United Nations’s Sustainable Development Goals for 2030.](https://www.un.org/sustainabledevelopment/sustainable-development-goals/)</b>
 
 <br>
+<div id="resimg">
 ![sdgbar image](/img/sdgbar.png)
-
+</div>
 
 <br>
  [SDG 5 Gender Equality] (https://www.un.org/sustainabledevelopment/gender-equality/) - by enhancing the use of enabling technology, in particular information and communications technology, to promote the empowerment of women. [“At an avg. of 68%, women represent the largest group within the garment workforce....the empowerment of women is depicted as a prerequisite to the eradication of poverty and sustainable growth.”](https://goo.gl/d5vHkj)
