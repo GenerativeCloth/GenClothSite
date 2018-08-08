@@ -1,4 +1,4 @@
-baseurl = "http://gencloth.com/"
+baseurl = "https://gencloth.com/"
 title = "GenCloth"
 theme = "hugo-universal-theme"
 
