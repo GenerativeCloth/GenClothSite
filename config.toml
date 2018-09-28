@@ -159,7 +159,7 @@ paginate = 10
 
 [params.see_more]
     enable = true
-    icon = "fa fa-cogs"
+    icon = "fa fa-key"
     title = "Come make clothes with us."
     subtitle = "                      "
     link_url = "                      "
