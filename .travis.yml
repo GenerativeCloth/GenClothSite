@@ -11,8 +11,8 @@ script:
     - hugo
 
 deploy:
-  provider: pages
-  repo: https://github.com/GenerativeCloth/generativecloth.github.io
+  provider: script
+  script: ./deploy.sh ""
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   email: $GITHUB_EMAIL
