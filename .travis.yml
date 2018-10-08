@@ -17,8 +17,8 @@ after_script:
 - cd public
 - git config --global user.email "fraguada@gmail.com"
 - git config --global user.name "fraguada"
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- git config credential.helper "store --file=.git-credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git-credentials
 - git add .
 - git commit -m "commit from travis"
 - git push origin master
