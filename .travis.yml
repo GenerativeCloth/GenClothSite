@@ -14,7 +14,7 @@ script:
 
 deploy:
   provider: script
-  script: ./deploy.sh "commit from travis"
+  script: ./deploy.sh
   skip-cleanup: true
   github-token: "$GITHUB_TOKEN"
   email: "$GITHUB_EMAIL"
