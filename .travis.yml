@@ -13,8 +13,8 @@ script:
 - hugo
 
 deploy:
-  provider: script
-  script: ./deploy.sh
+  provider: pages
+  # script: ./deploy.sh
   skip-cleanup: true
   github-token: "$GITHUB_TOKEN"
   email: "$GITHUB_EMAIL"
