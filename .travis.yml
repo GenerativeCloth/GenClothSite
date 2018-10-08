@@ -12,20 +12,14 @@ before_script:
 script:
 - hugo
 
-deploy:
-  provider: pages
-  # script: ./deploy.sh
-  repo: https://github.com/GenerativeCloth/generativecloth.github.io
-  skip-cleanup: true
-  github-token: "$GITHUB_TOKEN"
-  email: "$GITHUB_EMAIL"
-  name: "$GITHUB_USERNAME"
-  keep-history: true
-  local-dir: public
-  target-branch: master
-  verbose: true
-  on:
-    branch: master
+after_script:
+- echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+- cd public
+- git add .
+- git commit -m "commit from travis"
+- git push origin master
+- cd ..
+
 env:
   global:
   - secure: Sp2MivfAmICDbN+BFzYRA9+o9lDd8bqRmOEm9uRT6tEf2mMJp0FE3xdOH8xkcwri+qLtPXb6Ml3beHcda+Ue2nGior4Qs/uKNo2owptvTWZanh4Ph+X6tILheS3yqhpve2i2T7RgX/Esxm+u+dZFkiaUJAyu74gxmWtE9xrkinU/0Ym6eUhX27stHY0qir8NVJ0TusSLsSpDrC49vjQS6U3C0ypZ2AjzN2HVMaE7cwvp3tfKDCdo0RSNBR0Hkydjx/yqgJ/5MYOi4l32pHu7GxdSazSmRMZeAUiChlQGmb0Kbj/1gvo73RCuAZhigeOcVHmLRJPeEHYqMyTCfzx3A9RmD9xvD/r0wH2lxOLa9yHsjQEB0G8/vTOLFrVVborwei2gDi9ZigN19vQuHbSu5mzL6Pz4zwFTqEDiEErgQraE9kq0o41bLe9pUO37kN0G8hAN2K57jWs0+ClGIymswqAqBjrLG9WvJqRclpqxh78TrPmrrsAq/dm61nw0ACTSou2L5EVSPZvzqxE0j7m2KwJ/U5SSn4boMSelDOANPVrYSr9mnHvrgrD5+PJXsBXTrhvm1IwzK5xhQ62m1qKbI/l1su2PC/ffcu6/Ek2NhdYQdmsuryAMHLfbFJLantISqKRlNrR1DrVJpv0pkHSLDkCTedICAgElP7/R3Gfxp2c=
