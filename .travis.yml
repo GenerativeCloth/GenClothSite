@@ -19,7 +19,7 @@ after_script:
 - git add .
 - git status
 - git commit -m "commit from travis"
-- git push origin master
+- git push https://fraguada:$GITHUB_TOKEN@github.com/GenerativeCloth/generativecloth.github.io.git master
 - cd ..
 
 env:
