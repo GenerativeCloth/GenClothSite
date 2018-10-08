@@ -1,0 +1,22 @@
+language: python
+
+install:
+    - wget -qO- https://api.github.com/repos/gohugoio/hugo/releases/latest | sed -r -n '/browser_download_url/{/Linux-64bit.deb/{s@[^:]*:[[:space:]]*"([^"]*)".*@\1@g;p}}' | xargs wget
+    - sudo dpkg -i hugo*.deb
+
+before_script:
+    - git submodule update --init --remote --recursive
+
+script: ./deploy.sh ""
+
+deploy:
+  provider: pages
+  repo: https://github.com/GenerativeCloth/generativecloth.github.io.git
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: public
+  target-branch: master
+  verbose: true
+  on:
+    branch: master
