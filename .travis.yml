@@ -1,25 +1,29 @@
 language: python
-
 install:
-    - wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
-    - sudo dpkg -i hugo*.deb
-
+- wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
+- sudo dpkg -i hugo*.deb
 before_script:
-    - git submodule update --init --remote --recursive
-
-script: 
-    - hugo
-
+- git submodule update --init --remote --recursive
+- git config --global user.email "fraguada@gmail.com"
+- git config --global user.name "fraguada"
+script:
+- hugo
+after_script:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 deploy:
   provider: script
   script: ./deploy.sh "commit from travis"
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  email: $GITHUB_EMAIL
-  name: $GITHUB_USERNAME
+  github-token: "$GITHUB_TOKEN"
+  email: "$GITHUB_EMAIL"
+  name: "$GITHUB_USERNAME"
   keep-history: true
   local-dir: public
   target-branch: master
   verbose: true
   on:
     branch: master
+env:
+  global:
+  - secure: Sp2MivfAmICDbN+BFzYRA9+o9lDd8bqRmOEm9uRT6tEf2mMJp0FE3xdOH8xkcwri+qLtPXb6Ml3beHcda+Ue2nGior4Qs/uKNo2owptvTWZanh4Ph+X6tILheS3yqhpve2i2T7RgX/Esxm+u+dZFkiaUJAyu74gxmWtE9xrkinU/0Ym6eUhX27stHY0qir8NVJ0TusSLsSpDrC49vjQS6U3C0ypZ2AjzN2HVMaE7cwvp3tfKDCdo0RSNBR0Hkydjx/yqgJ/5MYOi4l32pHu7GxdSazSmRMZeAUiChlQGmb0Kbj/1gvo73RCuAZhigeOcVHmLRJPeEHYqMyTCfzx3A9RmD9xvD/r0wH2lxOLa9yHsjQEB0G8/vTOLFrVVborwei2gDi9ZigN19vQuHbSu5mzL6Pz4zwFTqEDiEErgQraE9kq0o41bLe9pUO37kN0G8hAN2K57jWs0+ClGIymswqAqBjrLG9WvJqRclpqxh78TrPmrrsAq/dm61nw0ACTSou2L5EVSPZvzqxE0j7m2KwJ/U5SSn4boMSelDOANPVrYSr9mnHvrgrD5+PJXsBXTrhvm1IwzK5xhQ62m1qKbI/l1su2PC/ffcu6/Ek2NhdYQdmsuryAMHLfbFJLantISqKRlNrR1DrVJpv0pkHSLDkCTedICAgElP7/R3Gfxp2c=
