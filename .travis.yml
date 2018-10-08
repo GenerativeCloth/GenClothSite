@@ -3,7 +3,6 @@ install:
 - wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
 - sudo dpkg -i hugo*.deb
 before_script:
-- git submodule update --init --remote --recursive
 - git config --global user.email "fraguada@gmail.com"
 - git config --global user.name "fraguada"
 - git config credential.helper "store --file=.git/credentials"
