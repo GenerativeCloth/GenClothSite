@@ -6,13 +6,17 @@ install:
 - wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
 - sudo dpkg -i hugo*.deb
 
+before_script:
+- cd public
+- git checkout master
+- cd ..
+
 script:
 - hugo
 
 after_script:
 - echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 - cd public
-- git checkout -b "currHead"
 - git add .
 - git status
 - git remote show origin
