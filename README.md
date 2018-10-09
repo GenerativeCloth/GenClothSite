@@ -3,7 +3,10 @@
 Use this repository to develop GenCloth.com.
 
 ## Development
-- Clone this repository
-- make the edits you'd like
-- from the terminal, run: `./deploy.sh "Some message pertaining to the edits you made"`. Running this actually commits and pushes the files in the `public` folder to the generativecloth.github.io repository: - `https://github.com/GenerativeCloth/generativecloth.github.io`
-- Finally, commit and push the changes from this repository.
+- If this is the first time: clone or fork this repository.
+- If you already have the source, use `git pull` to get the latest changes
+- Make edits, add posts, change images, etc.
+- Start tracking any untracked files: `git add .`
+- Commit changes and add a message to describe what you've changed: `git commit -m "made some chages"`
+- Push changes to the remote repository: `git push origin master`
+- Travis CI will take care of building the site and pushing the new files to generativecloth.github.io repository.
