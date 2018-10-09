@@ -21,6 +21,6 @@ after_script:
 - git add .
 - git status
 - git remote show origin
-- git commit -m "commit from travis"
+- git commit -m "commit from travis - $TRAVIS_BUILD_NUMBER"
 - git push origin master
 - cd ..
